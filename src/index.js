@@ -1,0 +1,21 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import UserRoot from "./UserRoot";
+import store from "./data/store";
+import { Provider } from "react-redux";
+import * as serviceWorker from "./serviceWorker";
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <UserRoot />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+// If you want your data to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
